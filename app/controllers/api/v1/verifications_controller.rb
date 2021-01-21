@@ -1,5 +1,6 @@
-class Api::V1::VerificationsController < Api::V1::BaseController
+# frozen_string_literal: true
 
+class Api::V1::VerificationsController < Api::V1::BaseController
   def create
     @verification = Verification.create(verification_params)
     render json: @verification

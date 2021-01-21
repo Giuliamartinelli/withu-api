@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'twilio_methods'
 
 class Api::V1::MethodsController < Api::V1::BaseController

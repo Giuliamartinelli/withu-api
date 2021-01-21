@@ -1,6 +1,7 @@
-class Api::V1::AngelsController < Api::V1::BaseController
+# frozen_string_literal: true
 
-   def create
+class Api::V1::AngelsController < Api::V1::BaseController
+  def create
     @angel = Angel.create(angels_params)
     render json: @angel
   end
