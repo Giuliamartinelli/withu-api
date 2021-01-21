@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::AngelsController < Api::V1::BaseController
+  include DeviseTokenAuth::Concerns::SetUserByToken
   def create
     @angel = Angel.create(angels_params)
     render json: @angel
@@ -27,4 +28,7 @@ class Api::V1::AngelsController < Api::V1::BaseController
   def angels_params
     params.require(:angel).permit(:name, :phone_number, :user_id, :prefix)
   end
+
+  protect_from_forgery with: :null_session, only: Proc.new { |c| c.request.format.json? }
+  before_action :authenticate_user!
 end
