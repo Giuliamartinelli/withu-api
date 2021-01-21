@@ -13,6 +13,6 @@ class Angel < ApplicationRecord
     end
   end
 
-  validates :name, :phone_number, :prefix, presence: true
-  validates :phone_number, format: { with: /\A.{6,}\z/ }
+  # validates :name, :phone_number, :prefix, presence: true
+  # validates :phone_number, format: { with: /\A.{6,}\z/ }
 end
