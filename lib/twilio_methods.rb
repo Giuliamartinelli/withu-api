@@ -49,7 +49,6 @@ module TwilioMethods
     return message_sids
   end
 
-
   def self.verify_number(phone_number, code)
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     verification_check = @client.verify
